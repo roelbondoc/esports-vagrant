@@ -5,15 +5,9 @@ package "libpq-dev"
 package "libmysqlclient-dev"
 package "redis-server"
 
-execute "copy generated ssh key" do
+execute "copy ssh config" do
   command <<-EOF
-    cp /vagrant/ssh/config /home/vagrant/.ssh/config
-    cp /vagrant/ssh/id_rsa /home/vagrant/.ssh/id_rsa
-    cp /vagrant/ssh/id_rsa.pub /home/vagrant/.ssh/id_rsa.pub
-    chown vagrant:vagrant /home/vagrant/.ssh/id_rsa
-    chown vagrant:vagrant /home/vagrant/.ssh/id_rsa.pub
-    chmod 600 /home/vagrant/.ssh/id_rsa
-    chmod 644 /home/vagrant/.ssh/id_rsa.pub
+    cp /vagrant/config/ssh_config /home/vagrant/.ssh/config
   EOF
 end
 
