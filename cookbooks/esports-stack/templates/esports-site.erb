@@ -1,0 +1,19 @@
+server {
+  listen   8080;
+  
+  location / {
+    proxy_pass   http://localhost:3000;
+  }
+
+  location /my_score {
+    proxy_pass   http://localhost:3002;
+  }
+
+  location /device {
+    proxy_pass   http://localhost:3002;
+  }
+
+  location /oauth {
+    proxy_pass   http://localhost:3002;
+  }
+}

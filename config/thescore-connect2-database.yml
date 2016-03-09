@@ -1,0 +1,24 @@
+template: &template
+  username: thescore
+  password:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  host: 10.1.2.10
+  pool: 5
+
+development:
+  <<: *template
+  database: thescore_connect_development
+
+staging:
+  <<: *template
+  database: thescore_connect_development
+
+production:
+  <<: *template
+  database:
+
+test:
+  <<: *template
+  database: thescore_connect_test
