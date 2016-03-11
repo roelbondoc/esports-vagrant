@@ -12,4 +12,8 @@
 
 ## Step by Step
 
-1) `$ vagrant up`
+1) `$ bundle install`
+
+2) `$ bundle exec rake`
+
+3) `$ vagrant up`
