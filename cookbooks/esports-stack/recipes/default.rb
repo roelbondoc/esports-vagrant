@@ -1,6 +1,4 @@
 package "git-core"
-package "nodejs-legacy"
-package "npm"
 package "libpq-dev"
 package "libmysqlclient-dev"
 package "redis-server"

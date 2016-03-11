@@ -23,6 +23,8 @@ Vagrant.configure(2) do |config|
   config.vm.provision "setup", type: "chef_solo" do |chef|
     chef.add_recipe "recipe[ruby_build]"
     chef.add_recipe "recipe[ruby_rbenv::user]"
+    chef.add_recipe "recipe[nodejs]"
+    chef.add_recipe "recipe[nodejs::npm]"
     chef.add_recipe "recipe[nginx]"
     chef.add_recipe "recipe[esports-stack]"
 

@@ -9,6 +9,10 @@ server {
     proxy_pass   http://localhost:3002;
   }
 
+  location /admin {
+    proxy_pass   http://localhost:4200;
+  }
+
   location /device {
     proxy_pass   http://localhost:3002;
   }

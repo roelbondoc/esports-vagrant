@@ -1,6 +1,7 @@
 startup_message off
 screen -t api 0 bash -c 'cd /home/vagrant/src/esports-core/api; bundle exec rails server -p3000 -b0.0.0.0'
 screen -t nexus 1 bash -c 'cd /home/vagrant/src/esports-core/nexus; bundle exec rails server -p3001 -b0.0.0.0'
-screen -t cms 2 bash -c 'cd /home/vagrant/src/cms'
-screen -t connect 3 bash -c 'cd /home/vagrant/src/thescore-connect2'
-screen -t feed 4 bash -c 'cd /home/vagrant/src/my_feed'
+screen -t ember-admin 2 bash -c 'cd /home/vagrant/src/esports-core/ember-admin; ember server'
+screen -t cms 3 bash -c 'cd /home/vagrant/src/cms'
+screen -t connect 4 bash -c 'cd /home/vagrant/src/thescore-connect2'
+screen -t feed 5 bash -c 'cd /home/vagrant/src/my_feed'
