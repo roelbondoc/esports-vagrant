@@ -21,9 +21,3 @@ task :setup do
     STDIN.gets.chomp
   end
 end
-
-task :clean do
-  puts 'Clean'
-  rm_rf 'src'
-  rm_rf 'ssh'
-end
