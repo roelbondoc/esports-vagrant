@@ -1,6 +1,7 @@
 package "git-core"
 package "libpq-dev"
 package "libmysqlclient-dev"
+package "postgresql-client"
 package "redis-server"
 
 execute "copy generated ssh key" do
