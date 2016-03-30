@@ -3,7 +3,7 @@
 
 GLOBAL_RUBY = '2.3.0'
 RUBIES = ['2.3.0', '2.2.3', '2.2.2']
-GEMS = ['bundler']
+GEMS = ['bundler', 'god']
 
 Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/trusty64"
@@ -11,6 +11,7 @@ Vagrant.configure(2) do |config|
   config.vm.network "forwarded_port", guest: 8080, host: 8080
   config.vm.network :private_network, ip: "10.1.2.99"
   config.vm.hostname = 'esports.dev'
+  config.vm.synced_folder ".", "/vagrant", type: "nfs"
 
   config.timezone.value = "America/Toronto"
 
@@ -19,7 +20,7 @@ Vagrant.configure(2) do |config|
   config.hostmanager.aliases = %w(esports.dev)
 
   config.vm.provider "virtualbox" do |v|
-    v.memory = 2048
+    v.memory = 4096
     v.cpus = 2
   end
 
@@ -31,7 +32,11 @@ Vagrant.configure(2) do |config|
     chef.add_recipe "recipe[nodejs::nodejs_from_source]"
     chef.add_recipe "recipe[nodejs::npm]"
     chef.add_recipe "recipe[nginx]"
-    chef.add_recipe "recipe[esports-stack]"
+    chef.add_recipe "recipe[esports-stack::ssh]"
+    chef.add_recipe "recipe[esports-stack::packages]"
+    #chef.add_recipe "recipe[god]"
+    chef.add_recipe "recipe[esports-stack::installs]"
+    chef.add_recipe "recipe[esports-stack::services]"
 
     chef.json = {
       'nodejs' => {

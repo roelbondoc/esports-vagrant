@@ -1,25 +1,3 @@
-package "git-core"
-package "libpq-dev"
-package "libmysqlclient-dev"
-package "postgresql-client"
-package "redis-server"
-
-execute "copy generated ssh key" do
-  command <<-EOF
-    cp /vagrant/config/ssh_config /home/vagrant/.ssh/config
-    cp /vagrant/ssh/id_rsa /home/vagrant/.ssh/id_rsa
-    cp /vagrant/ssh/id_rsa.pub /home/vagrant/.ssh/id_rsa.pub
-    chown vagrant:vagrant /home/vagrant/.ssh/id_rsa
-    chown vagrant:vagrant /home/vagrant/.ssh/id_rsa.pub
-    chmod 600 /home/vagrant/.ssh/id_rsa
-    chmod 644 /home/vagrant/.ssh/id_rsa.pub
-  EOF
-end
-
-bash "install node and bower" do
-  code "npm install -g bower phantomjs ember-cli"
-end
-
 link '/home/vagrant/src' do
   to '/vagrant/src'
   action :create
@@ -80,12 +58,3 @@ execute "bower install espore-core/ember-admin" do
   environment ({'HOME' => '/home/vagrant', 'USER' => 'vagrant'})
   command "bower install"
 end
-
-template "#{node.nginx.dir}/sites-available/esports" do
-  source "esports-site.erb"
-  mode 0644
-  owner node.nginx.user
-  group node.nginx.user
-end
-
-nginx_site "esports"
