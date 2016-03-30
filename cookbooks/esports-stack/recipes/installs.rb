@@ -22,7 +22,6 @@ end
 
 execute "copy config files" do
   command <<-EOF
-    cp /vagrant/config/screenrc-esports-services /home/vagrant/screenrc-esports-services
     cp /vagrant/config/thescore-connect2-database.yml /home/vagrant/src/thescore-connect2/config/database.yml
     cp /vagrant/config/cms-database.yml /home/vagrant/src/cms/config/database.yml
   EOF
