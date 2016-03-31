@@ -8,6 +8,7 @@ repos_to_clone = %w(
   thescore-connect2
   my_feed
   cms
+  ansible-playbooks
 )
 
 repos_to_clone.each do |repo|
