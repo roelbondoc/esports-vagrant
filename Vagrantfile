@@ -29,7 +29,7 @@ Vagrant.configure(2) do |config|
   config.vm.provision "setup", type: "chef_solo" do |chef|
     chef.add_recipe "recipe[ruby_build]"
     chef.add_recipe "recipe[ruby_rbenv::user]"
-    chef.add_recipe "recipe[nodejs::nodejs_from_source]"
+    chef.add_recipe "recipe[nodejs::nodejs_from_binary]"
     chef.add_recipe "recipe[nodejs::npm]"
     chef.add_recipe "recipe[nginx]"
     chef.add_recipe "recipe[esports-stack::ssh]"
@@ -40,9 +40,8 @@ Vagrant.configure(2) do |config|
 
     chef.json = {
       'nodejs' => {
-        'version' => '4.2.4',
-        'source' => { 'checksum' => '4ee244ffede7328d9fa24c3024787e71225b7abaac49fe2b30e68b27460c10ec' },
-        'npm' => { 'install_method' => 'source' }
+        'version' => '5.1.0',
+        'binary' => { 'checksum' => '305bf2983c65edea6dd2c9f3669b956251af03523d31cf0a0471504fd5920aac' }
       },
       'rbenv' => {
         'user_installs' => [
