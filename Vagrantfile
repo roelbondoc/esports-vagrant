@@ -30,12 +30,12 @@ Vagrant.configure(2) do |config|
     chef.add_recipe "recipe[ruby_build]"
     chef.add_recipe "recipe[ruby_rbenv::user]"
     chef.add_recipe "recipe[nodejs::nodejs_from_binary]"
-    chef.add_recipe "recipe[nodejs::npm]"
+    chef.add_recipe "recipe[nodejs::npm_from_source]"
     chef.add_recipe "recipe[nginx]"
     chef.add_recipe "recipe[esports-stack::ssh]"
     chef.add_recipe "recipe[esports-stack::packages]"
-    #chef.add_recipe "recipe[god]"
     chef.add_recipe "recipe[esports-stack::installs]"
+    chef.add_recipe "recipe[god]"
     chef.add_recipe "recipe[esports-stack::services]"
 
     chef.json = {
