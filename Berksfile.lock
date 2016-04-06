@@ -4,24 +4,31 @@ DEPENDENCIES
   god
   nginx
   nodejs
+  nvm
+    git: git@github.com:phutchins/nvm.git
+    revision: 301a3cdf04cddf6d6aef62a6d120c6da7aeebe42
   ruby_build
   ruby_rbenv
 
 GRAPH
-  7-zip (1.0.2)
-    windows (>= 1.2.2)
   apt (3.0.0)
   ark (1.0.1)
     build-essential (>= 0.0.0)
     seven_zip (>= 0.0.0)
     windows (>= 0.0.0)
-  build-essential (2.3.1)
-    7-zip (>= 0.0.0)
+  build-essential (3.2.0)
+    seven_zip (>= 0.0.0)
   chef_handler (1.3.0)
+  dmg (2.3.0)
   esports-stack (0.1.0)
-  god (1.0.0)
-    runit (>= 0.0.0)
-  homebrew (2.0.5)
+  git (4.4.1)
+    build-essential (>= 0.0.0)
+    dmg (>= 0.0.0)
+    windows (>= 0.0.0)
+    yum-epel (>= 0.0.0)
+  god (1.0.2)
+    runit (<= 0.16.2)
+  homebrew (2.1.0)
     build-essential (>= 2.1.2)
   java (1.39.0)
     apt (>= 0.0.0)
@@ -37,14 +44,15 @@ GRAPH
     build-essential (>= 0.0.0)
     homebrew (>= 0.0.0)
     yum-epel (>= 0.0.0)
-  ohai (2.1.0)
-  packagecloud (0.2.0)
+  nvm (0.1.7)
+    build-essential (>= 0.0.0)
+    git (>= 0.0.0)
+  ohai (3.0.1)
   ruby_build (0.8.0)
   ruby_rbenv (1.0.1)
     java (> 1.4.0)
     ruby_build (>= 0.0.0)
-  runit (1.7.6)
-    packagecloud (>= 0.0.0)
+  runit (0.16.2)
   seven_zip (2.0.0)
     windows (>= 1.2.2)
   windows (1.39.2)
