@@ -45,16 +45,16 @@ bundle_install_locations.each do |location|
   end
 end
 
-execute "npm install espore-core/ember-admin" do
+bash "npm install espore-core/ember-admin" do
   cwd "/home/vagrant/src/esports-core/ember-admin"
   user "vagrant"
   environment ({'HOME' => '/home/vagrant', 'USER' => 'vagrant'})
-  command "npm install"
+  code "npm install"
 end
 
-execute "bower install espore-core/ember-admin" do
+bash "bower install espore-core/ember-admin" do
   cwd "/home/vagrant/src/esports-core/ember-admin"
   user "vagrant"
-  environment ({'HOME' => '/home/vagrant', 'USER' => 'vagrant'})
-  command "bower install"
+  environment ({'HOME' => '/home/vagrant', 'USER' => 'vagrant', 'PATH' => "./node_modules/.bin:#{ENV['PATH']}"})
+  code "bower install"
 end
