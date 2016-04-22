@@ -7,6 +7,7 @@ package "ruby-dev"
 package "python"
 package "python-dev"
 package "python-pip"
+package "imagemagick"
 
 nvm_install 'v5.1.0'  do
   from_source false
