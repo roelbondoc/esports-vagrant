@@ -9,6 +9,8 @@ package "python-dev"
 package "python-pip"
 package "imagemagick"
 package "mitmproxy"
+package "cmake"
+package "pkg-config"
 
 nvm_install 'v5.1.0'  do
   from_source false

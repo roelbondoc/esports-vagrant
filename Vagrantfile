@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 GLOBAL_RUBY = '2.3.0'
-RUBIES = ['2.3.0', '2.2.3', '2.2.2']
+RUBIES = ['2.3.1', '2.3.0', '2.2.3']
 GEMS = ['bundler', 'god']
 
 Vagrant.configure(2) do |config|
