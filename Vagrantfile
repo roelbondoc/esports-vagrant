@@ -28,6 +28,7 @@ Vagrant.configure(2) do |config|
   config.omnibus.chef_version = :latest
 
   config.vm.provision "setup", type: "chef_solo" do |chef|
+    chef.add_recipe "recipe[esports-stack::prerun]"
     chef.add_recipe "recipe[ruby_build]"
     chef.add_recipe "recipe[ruby_rbenv::user]"
     chef.add_recipe "recipe[nginx]"
