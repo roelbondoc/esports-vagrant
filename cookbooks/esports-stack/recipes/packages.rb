@@ -1,3 +1,8 @@
+bash 'update apt' do
+  user 'root'
+  code "apt-get update"
+end
+
 package "git-core"
 package "libpq-dev"
 package "libmysqlclient-dev"
