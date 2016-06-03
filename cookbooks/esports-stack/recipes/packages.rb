@@ -20,7 +20,7 @@ end
 
 bash 'add node_module bin to path' do
   user 'vagrant'
-  code "echo 'export PATH=./node_modules/.bin:$PATH' >> /home/vagrant/.bashrc"
+  code "echo 'export PATH=/home/vagrant/src/esports-core/ember-admin/node_modules/.bin:$PATH' >> /home/vagrant/.bashrc"
 end
 
 bash 'update pip' do
