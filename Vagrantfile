@@ -34,7 +34,6 @@ Vagrant.configure(2) do |config|
     chef.add_recipe "recipe[ruby_rbenv::user]"
     chef.add_recipe "recipe[nginx]"
     chef.add_recipe "recipe[nvm]"
-    #chef.add_recipe "recipe[god]"
     chef.add_recipe "recipe[esports-stack::ssh]"
     chef.add_recipe "recipe[esports-stack::packages]"
     chef.add_recipe "recipe[esports-stack::installs]"
