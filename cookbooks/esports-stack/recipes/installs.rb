@@ -49,12 +49,12 @@ bash "npm install espore-core/ember-admin" do
   cwd "/home/vagrant/src/esports-core/ember-admin"
   user "vagrant"
   environment ({'HOME' => '/home/vagrant', 'USER' => 'vagrant'})
-  code "npm install"
+  code "node_modules/.bin/npm install"
 end
 
 bash "bower install espore-core/ember-admin" do
   cwd "/home/vagrant/src/esports-core/ember-admin"
   user "vagrant"
   environment ({'HOME' => '/home/vagrant', 'USER' => 'vagrant', 'PATH' => "./node_modules/.bin:#{ENV['PATH']}"})
-  code "bower install"
+  code "node_modules/.bin/bower install"
 end
