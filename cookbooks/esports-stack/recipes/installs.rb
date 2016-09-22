@@ -15,7 +15,7 @@ repos_to_clone.each do |repo|
   execute "clone #{repo}" do
     cwd "/home/vagrant/src"
     user "vagrant"
-    environment ({'HOME' => '/home/vagrant', 'USER' => 'vagrant'}) 
+    environment ({'HOME' => '/home/vagrant', 'USER' => 'vagrant'})
     command "git clone git@github.com:scoremedia/#{repo}.git"
     not_if { File.exists?("/home/vagrant/src/#{repo}") }
   end
@@ -57,4 +57,12 @@ bash "bower install espore-core/ember-admin" do
   user "vagrant"
   environment ({'HOME' => '/home/vagrant', 'USER' => 'vagrant', 'PATH' => "./node_modules/.bin:#{ENV['PATH']}"})
   code "node_modules/.bin/bower install"
+end
+
+execute "install dotfiles" do
+  cwd "/home/vagrant/src/dotfiles"
+  user "vagrant"
+  environment ({'HOME' => '/home/vagrant', 'USER' => 'vagrant'})
+  command "./install"
+  only_if { File.exists?("/home/vagrant/src/dotfiles") }
 end

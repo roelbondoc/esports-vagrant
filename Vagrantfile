@@ -9,8 +9,12 @@ Vagrant.configure(2) do |config|
   config.vm.box = "ubuntu/trusty64"
   config.vm.box_version = "=20160406.0.0"
 
-  config.vm.network "forwarded_port", guest: 8080, host: 8080
-  config.vm.network "forwarded_port", guest: 8000, host: 8000
+  config.vm.network "forwarded_port", guest: 3000, host: 3000 # api
+  config.vm.network "forwarded_port", guest: 3001, host: 3001 # cms
+  config.vm.network "forwarded_port", guest: 3002, host: 3002 # connect
+  config.vm.network "forwarded_port", guest: 3003, host: 3003 # myfeed
+  config.vm.network "forwarded_port", guest: 3004, host: 3004 # nexus
+  config.vm.network "forwarded_port", guest: 3005, host: 3005 # admin
   config.vm.network :private_network, ip: "10.1.2.99"
   config.vm.hostname = 'esports.dev'
   config.vm.synced_folder ".", "/vagrant", type: "nfs"

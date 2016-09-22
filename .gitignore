@@ -2,3 +2,4 @@ src
 ssh
 dotfiles
 .vagrant
+package.box
